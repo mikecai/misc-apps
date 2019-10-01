@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: List
+items:
+- kind: ProjectRequest
+  apiVersion: v1
+  metadata:
+    name: misc-apps-liberty-build
+    creationTimestam: null
+  displayName: Misc Apps on Liberty - Build
+- kind: ProjectRequest
+  apiVersion: v1
+  metadata:
+    name: misc-apps-liberty-dev
+    creationTimestam: null
+  displayName: Misc Apps on Liberty - Dev
+- kind: ProjectRequest
+  apiVersion: v1
+  metadata:
+    name: misc-apps-liberty-stage
+    creationTimestam: null
+  displayName: Misc Apps on Liberty - Stage
+- kind: ProjectRequest
+  apiVersion: v1
+  metadata:
+    name: misc-apps-liberty-prod
+    creationTimestam: null
+  displayName: Misc Apps on Liberty - Prod
