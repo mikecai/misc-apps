@@ -72,9 +72,9 @@ objects:
             name: ${APPLICATION_NAME}
          spec:
             containers:
+            -  name: ${APPLICATION_NAME}
                image: ${APPLICATION_NAME}
                imagePullPolicy: Always
-               name: ${APPLICATION_NAME}
                livenessProbe:
                   tcpSocket:
                      port: 9443
