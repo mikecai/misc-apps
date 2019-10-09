@@ -65,6 +65,7 @@ objects:
          git:
             uri: ${SOURCE_URL}
             ref: ${SOURCE_REF}
+         contextDir: "misc-apps"
       strategy:
          jenkinsPipelineStrategy:
             jenkinsfilePath: Jenkinsfile

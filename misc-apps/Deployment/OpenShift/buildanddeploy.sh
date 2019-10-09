@@ -77,11 +77,11 @@ oc new-app gse-liberty-build -p APPLICATION_NAME=misc-apps-liberty -p SOURCE_URL
 # Run pipeline 
 echo " "
 echo "-------------------- Run pipeline --------------------"
-- Go to Applicatin Console
-- Select the build project
-- Navigate to Builds --> Pipeline
-- Click Start Pipeline
-- Click view log
-- Log in with OpenShift and grant access
-- 
+# - Go to Applicatin Console
+# - Select the build project
+# - Navigate to Builds --> Pipeline
+# - Click Start Pipeline
+# - Click view log
+# - Log in with OpenShift and grant access
+
 
