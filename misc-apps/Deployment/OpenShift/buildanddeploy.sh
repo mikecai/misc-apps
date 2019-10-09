@@ -74,5 +74,14 @@ echo " "
 echo "-------------------- Create build defition --------------------"
 oc new-app gse-liberty-build -p APPLICATION_NAME=misc-apps-liberty -p SOURCE_URL="https://github.com/mikecai/misc-apps" -n misc-apps-liberty-build
 
-
+# Run pipeline 
+echo " "
+echo "-------------------- Run pipeline --------------------"
+- Go to Applicatin Console
+- Select the build project
+- Navigate to Builds --> Pipeline
+- Click Start Pipeline
+- Click view log
+- Log in with OpenShift and grant access
+- 
 
