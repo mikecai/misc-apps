@@ -27,8 +27,8 @@ COPY --chown=1001:0 --from=build-env /build/target/*.war /config/apps/
 ## Enable HTTP/HTTPS and MP_MONITORING for detailed caching info in Hazelcast
 ## Management Center.  (Remove for PROD?)
 ARG HTTP_ENDPOINT=false
-# ARG SSL=true
-# ARG MP_MONITORING=true
+ARG SSL=false
+ARG MP_MONITORING=false
 ## Copy hazelcast libs JARs from official image.
 # COPY --from=hazelcast/hazelcast:3.12 --chown=1001:0 /opt/hazelcast/lib/*.jar /opt/ibm/wlp/usr/shared/resources/hazelcast/
 # Instruct configure.sh to copy the client topology hazelcast.xml
