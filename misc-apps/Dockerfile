@@ -26,8 +26,8 @@ COPY ./target/*.war /config/apps/
 # HAZELCAST:
 ## Enable HTTP/HTTPS and MP_MONITORING for detailed caching info in Hazelcast
 ## Management Center.  (Remove for PROD?)
-ARG HTTP_ENDPOINT=true
-ARG SSL=true
+ARG HTTP_ENDPOINT=false
+ARG SSL=false
 ARG MP_MONITORING=false
 ## Copy hazelcast libs JARs from official image.
 # COPY --from=hazelcast/hazelcast:3.12 --chown=1001:0 /opt/hazelcast/lib/*.jar /opt/ibm/wlp/usr/shared/resources/hazelcast/
