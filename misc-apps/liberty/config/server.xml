@@ -6,6 +6,7 @@
 		<feature>servlet-4.0</feature>
 		<feature>jsp-2.3</feature>
 		<feature>cdi-2.0</feature>
+		<feature>appSecurity-2.0</feature>
 	</featureManager>
 
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
@@ -24,7 +25,7 @@
     </basicRegistry>
 -->
 
-    <webApplication location="${server.config.dir}/apps/misc-apps.war" id="misc-apps" contextRoot="miscapps">
+    <webApplication location="misc-apps.war" id="misc-apps" contextRoot="miscapps">
     	<classloader apiTypeVisibility="+third-party"></classloader>
     </webApplication>
 </server>
