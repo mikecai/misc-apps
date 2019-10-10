@@ -1,21 +1,17 @@
 ##### SOURCE COMPILATION #####
 # IMAGE: Get the base image for maven build
-FROM maven:3.6-ibmjava-8 AS build-env
+# FROM maven:3.6-ibmjava-8 AS build-env
 
-COPY ./src /build/src
-COPY ./pom.xml /build/pom.xml 
+#COPY ./src /build/src
+#COPY ./pom.xml /build/pom.xml 
 
-WORKDIR /build
-RUN mvn package -DskipTests
+#WORKDIR /build
+#RUN mvn package -DskipTests
 
 
 ##### APP IMAGE BUILD #####
 # IMAGE: Get the base image for Liberty
 FROM websphere-liberty:kernel-ubi-min
-
-USER root
-RUN chown -R 1001.0 /config /opt/ibm/wlp/usr/servers/defaultServer /opt/ibm/wlp/usr/shared/resources && chmod -R g+rw /config /opt/ibm/wlp/usr/servers/defaultServer  /opt/ibm/wlp/usr/shared/resources
-
 
 USER 1001
 
@@ -37,6 +33,10 @@ ARG HTTP_ENDPOINT=false
 # COPY --from=hazelcast/hazelcast:3.12 --chown=1001:0 /opt/hazelcast/lib/*.jar /opt/ibm/wlp/usr/shared/resources/hazelcast/
 # Instruct configure.sh to copy the client topology hazelcast.xml
 # ARG HZ_SESSION_CACHE=client
+
+USER root
+RUN chown -R 1001:0 /config /opt/ibm/wlp/usr/servers/defaultServer /opt/ibm/wlp/usr/shared/resources && \
+    chmod -R g+rw /config /opt/ibm/wlp/usr/servers/defaultServer  /opt/ibm/wlp/usr/shared/resources
 
 USER 1001
 RUN configure.sh
