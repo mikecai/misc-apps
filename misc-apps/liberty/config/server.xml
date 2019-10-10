@@ -7,6 +7,7 @@
 		<feature>jsp-2.3</feature>
 		<feature>cdi-2.0</feature>
 		<feature>appSecurity-2.0</feature>
+		<feature>localConnector-1.0</feature>
 	</featureManager>
 
     <!-- To access this server from a remote client add a host attribute to the following element, e.g. host="*" -->
@@ -17,7 +18,8 @@
     <!-- Automatically expand WAR files and EAR files -->
     <applicationManager autoExpand="true"/>
 
-    <keyStore id="defaultKeyStore" password="password" type="PKCS12" />
+<!--    <keyStore id="defaultKeyStore" password="password" type="PKCS12" />
+-->
 
 <!--
     <basicRegistry id="basic" realm="BasicRealm">
