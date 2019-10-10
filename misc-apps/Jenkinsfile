@@ -60,7 +60,7 @@ pipeline {
             openshift.withProject() {
               timeout (time: 10, unit: 'MINUTES') {
                 // run the build and wait for completion
-                def build = openshift.selector("bc", "${params.APPLICATION_NAME}").startBuild("--from-dir=.")
+                def build = openshift.selector("bc", "${params.APPLICATION_NAME}").startBuild("--from-dir=./misc-apps/")
                                     
                 // print the build logs
                 build.logs('-f')
