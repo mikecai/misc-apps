@@ -20,11 +20,7 @@
 		<dependency>
 			<groupId>net.wasdev.maven.tools.targets</groupId>
 			<artifactId>liberty-target</artifactId>
-<<<<<<< HEAD
 			<version>RELEASE</version>
-=======
-			<version>19.0.0.9</version>
->>>>>>> branch 'master' of https://github.com/mikecai/misc-apps.git
 			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
