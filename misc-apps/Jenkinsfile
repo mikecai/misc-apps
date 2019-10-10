@@ -33,6 +33,7 @@ pipeline {
       steps {
         sh """
         env
+        cd misc-apps
         mvn -v 
         mvn clean package
         """
@@ -43,6 +44,7 @@ pipeline {
     stage('Unit Test'){
       steps {
         sh """
+        cd misc-apps
         mvn -v 
         mvn test
         """
