@@ -13,14 +13,14 @@
 # IMAGE: Get the base image for Liberty
 FROM websphere-liberty:kernel-ubi-min
 
-USER 1001
+USER root
 
 # CONFIG: Add server configs
-COPY --chown=1001:0 ./liberty/config/ /config/
+COPY ./liberty/config/ /config/
 
 
 # APP: Deploy application
-COPY --chown=1001:0 ./target/*.war /config/apps/
+COPY ./target/*.war /config/apps/
  
 
 # HAZELCAST:
