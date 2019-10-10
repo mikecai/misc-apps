@@ -20,7 +20,7 @@ COPY --chown=1001:0 ./liberty/config/ /config/
 
 
 # APP: Deploy application
-COPY --chown=1001:0 --from=build-env /build/target/*.war /config/apps/
+COPY --chown=1001:0 /build/target/*.war /config/apps/
  
 
 # HAZELCAST:
