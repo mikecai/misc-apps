@@ -36,7 +36,7 @@ ARG MP_MONITORING=false
 
 USER root
 RUN chown -R 1001:0 /config /opt/ibm/wlp/usr/servers/defaultServer /opt/ibm/wlp/usr/shared/resources && \
-    chmod -R g+rw /config /opt/ibm/wlp/usr/servers/defaultServer  /opt/ibm/wlp/usr/shared/resources
+    chmod -R g+rwx /config /opt/ibm/wlp/usr/servers/defaultServer  /opt/ibm/wlp/usr/shared/resources
 
 USER 1001
 RUN configure.sh

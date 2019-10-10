@@ -36,6 +36,7 @@ pipeline {
         cd misc-apps
         mvn -v 
         mvn clean package
+        mv ./target/*.war ./target/misc-apps.war
         """
       }
     }
