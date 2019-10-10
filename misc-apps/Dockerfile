@@ -1,14 +1,14 @@
 ##### SOURCE COMPILATION #####
 # IMAGE: Get the base image for maven build
- FROM maven:3.6-ibmjava-8 AS build-env
-
-COPY ./src /build/src
-COPY ./pom.xml /build/pom.xml 
-
-WORKDIR /build
-RUN mvn package -DskipTests
-
-
+# FROM maven:3.6-ibmjava-8 AS build-env
+#
+# COPY ./src /build/src
+# COPY ./pom.xml /build/pom.xml 
+#
+# WORKDIR /build
+# RUN mvn package -DskipTests
+#
+#
 ##### APP IMAGE BUILD #####
 # IMAGE: Get the base image for Liberty
 FROM websphere-liberty:kernel-ubi-min
@@ -20,7 +20,7 @@ COPY --chown=1001:0 ./liberty/config/ /config/
 
 
 # APP: Deploy application
-COPY --chown=1001:0 --from=build-env /build/target/*.war /config/apps/
+COPY --chown=1001:0 ./target/*.war /config/apps/
  
 
 # HAZELCAST:
