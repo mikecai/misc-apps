@@ -13,8 +13,11 @@ RUN mvn package -DskipTests
 # IMAGE: Get the base image for Liberty
 FROM websphere-liberty:kernel-ubi-min
 
-USER 1001
+USER root
+RUN chown -R 1001.0 /config /opt/ibm/wlp/usr/servers/defaultServer /opt/ibm/wlp/usr/shared/resources && chmod -R g+rw /config /opt/ibm/wlp/usr/servers/defaultServer  /opt/ibm/wlp/usr/shared/resources
 
+
+USER 1001
 
 # CONFIG: Add server configs
 COPY --chown=1001:0 ./liberty/config/ /config/
